@@ -1,0 +1,17 @@
+{
+  "name": "mercado-livre-clone",
+  "version": "1.0.0",
+  "description": "The Mercode Livre short app clone",
+  "main": "pages/index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "next": "^9.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "repository": "https://github.com/fernandohenriques/mercado-livre-clone.git",
+  "author": "Fernando Henriques",
+  "license": "MIT"
+}
