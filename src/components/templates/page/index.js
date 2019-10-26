@@ -7,7 +7,11 @@ import 'styles/index.scss';
 const Page = ({ children, title }) => (
   <main>
     <Head>
-      <title>Mercado Livre -- {title}</title>
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+      <title>
+Mercado Livre --
+        {title}
+      </title>
     </Head>
     {children}
   </main>
@@ -15,7 +19,7 @@ const Page = ({ children, title }) => (
 
 Page.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 export default Page;

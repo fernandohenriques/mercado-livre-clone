@@ -9,8 +9,8 @@ const resourcesLoader = {
       'src/styles/helpers/_var.scss',
       'node_modules/sass-rem/_rem.scss',
       'src/styles/helpers/_mixins.scss',
-    ]
-  }
+    ],
+  },
 };
 
 const cssModuleLoader = {
@@ -27,22 +27,27 @@ const cssModuleLoader = {
         },
       },
     },
-    resourcesLoader
-  ]
+    resourcesLoader,
+  ],
 };
 
 module.exports = withCSS(withSass({
-  webpack: (config, options) => {
-    config.module.rules = config.module.rules.map(rule => {
-      if (rule.test.source.includes('scss') || rule.test.source.includes('sass'))
-        rule.use = [ ...rule.use, resourcesLoader ];
+  webpack: (config) => {
+    const newConfig = config;
+
+    newConfig.module.rules = config.module.rules.map((rule) => {
+      if (rule.test.source.includes('scss') || rule.test.source.includes('sass')) {
+        const newRule = rule;
+        newRule.use = [...rule.use, resourcesLoader];
+        return newRule;
+      }
 
       return rule;
     });
 
-    config.module.rules.push(cssModuleLoader);
-    config.resolve.modules = [ ...config.resolve.modules, path.resolve(__dirname, 'src') ];
+    newConfig.module.rules.push(cssModuleLoader);
+    newConfig.resolve.modules = [...config.resolve.modules, path.resolve(__dirname, 'src')];
 
-    return config;
+    return newConfig;
   },
 }));
