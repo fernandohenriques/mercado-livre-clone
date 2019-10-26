@@ -4,12 +4,23 @@
   "description": "The Mercode Livre short app clone",
   "main": "pages/index.js",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "next": "^9.1.1",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "sass-rem": "^2.0.1"
+  },
+  "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "node-sass": "^4.12.0",
+    "sass-resources-loader": "^2.0.1"
   },
   "repository": "https://github.com/fernandohenriques/mercado-livre-clone.git",
   "author": "Fernando Henriques",
