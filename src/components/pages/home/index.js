@@ -2,7 +2,7 @@ import React from 'react';
 import Page from 'components/templates/page';
 
 const Home = () => (
-  <Page title="Busca de Produtos">
+  <Page title="Mercado Livre - Busca">
     <h1>Home</h1>
   </Page>
 );

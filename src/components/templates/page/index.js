@@ -9,7 +9,6 @@ const Page = ({ children, title }) => (
     <Head>
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
       <title>
-Mercado Livre --
         {title}
       </title>
     </Head>

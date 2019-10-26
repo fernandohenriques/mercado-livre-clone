@@ -1,5 +1,8 @@
 module.exports = {
   verbose: true,
+  setupFiles: [
+    '<rootDir>/src/config/tests/enzymeSetup.js',
+  ],
   transform: {
     '^.+\\.js$': 'babel-jest',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff)$': '<rootDir>/src/config/tests/fileTransformer.js',
