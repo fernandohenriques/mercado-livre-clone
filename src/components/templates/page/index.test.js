@@ -27,4 +27,15 @@ describe('<Page />', () => {
     expect(wrapper.find('title')).toHaveLength(1);
     expect(wrapper.find('title').text()).toEqual(title);
   });
+
+  it('Should render page with semantic tag main', () => {
+    const wrapper = shallow(
+      <Page title="Página de produto">
+        <h1>Página de de um produto</h1>
+      </Page>
+    );
+
+    expect(wrapper.exists()).toBeTruthy();
+    expect(wrapper.find('main')).toHaveLength(1);
+  });
 });

@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  padding: rem(10px) 0;
+  background-color: $color-primary;
+
+  @include flex-default();
+
+  figure {
+    margin: 0;
+  }
+}

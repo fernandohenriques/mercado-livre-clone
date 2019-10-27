@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import Header from 'components/organisms/header';
 
 import 'styles/index.scss';
 
@@ -12,6 +13,7 @@ const Page = ({ children, title }) => (
         {title}
       </title>
     </Head>
+    <Header />
     {children}
   </main>
 );
