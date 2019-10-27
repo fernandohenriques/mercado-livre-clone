@@ -5,7 +5,14 @@
   padding: rem(10px) 0;
   width: 100%;
 
-  figure {
-    margin: 0;
+  .container {
+    @include flex-default();
+
+    width: 80%;
+
+    figure {
+      display: flex;
+      margin: 0 rem(25px) 0 0;
+    }
   }
 }
