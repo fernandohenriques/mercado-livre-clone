@@ -1,0 +1,16 @@
+.container {
+  color: $color-text-secondary;
+  font-size: rem(14px);
+  padding: 1rem 0;
+  width: 100%;
+
+  span {
+    svg {
+      display: inline-block;
+      fill: $color-text-secondary;
+      height: 1rem;
+      vertical-align: middle;
+      width: 1rem;
+    }
+  }
+}

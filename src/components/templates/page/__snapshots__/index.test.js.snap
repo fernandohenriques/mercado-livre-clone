@@ -2,27 +2,27 @@
 
 exports[`<Page /> Snapshot testing 1`] = `
 <DocumentFragment>
-  <main>
-    <header
-      class="header"
+  <header
+    class="header"
+  >
+    <div
+      class="container"
     >
-      <div
-        class="container"
-      >
-        <figure>
-          <img
-            alt="Mercado Livre - Onde comprar e vender de Tudo"
-            src="logo.png"
-            title="Mercado Livre - Onde comprar e vender de Tudo"
-          />
-        </figure>
-        <input
-          class="input"
-          placeholder="Buscar produtos..."
-          type="text"
+      <figure>
+        <img
+          alt="Mercado Livre - Onde comprar e vender de Tudo"
+          src="logo.png"
+          title="Mercado Livre - Onde comprar e vender de Tudo"
         />
-      </div>
-    </header>
+      </figure>
+      <input
+        class="input"
+        placeholder="Buscar produtos..."
+        type="text"
+      />
+    </div>
+  </header>
+  <main>
     <h1>
       Busca
     </h1>

@@ -5,7 +5,7 @@ module.exports = {
   ],
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff)$': '<rootDir>/src/config/tests/fileTransformer.js',
+    '\\.(jpg|jpeg|png|gif|svg|eot|otf|webp|ico|ttf|woff)$': '<rootDir>/src/config/tests/fileTransformer.js',
   },
   transformIgnorePatterns: [
     '<rootDir>/.next/',
@@ -16,5 +16,6 @@ module.exports = {
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^services(.*)$': '<rootDir>/src/services$1',
     '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
+    '^-!svg-react-loader(.*)$': '<rootDir>/src/config/tests/__mocks__/svgReactLoaderImport.js',
   },
 };

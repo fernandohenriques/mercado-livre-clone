@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumbs /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <span>
+      Eletronica y Audio 
+      <div />
+       
+    </span>
+    <span>
+      iPod 
+      <div />
+       
+    </span>
+    <span>
+      reproductores 
+      <div />
+       
+    </span>
+    <strong>
+      32 GB
+    </strong>
+  </div>
+</DocumentFragment>
+`;

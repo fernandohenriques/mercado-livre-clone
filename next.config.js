@@ -15,7 +15,8 @@ const resourcesLoader = {
 };
 
 const fileLoader = {
-  test: /\.(png|jpg|gif|svg)$/,
+  test: /\.(png|jpg|gif|svg|ico)$/,
+  exclude: /(src\/assets\/icons)/,
   use: {
     loader: 'file-loader',
     options: {
@@ -24,6 +25,15 @@ const fileLoader = {
       outputPath: 'static/files',
     },
   },
+};
+
+const svgReactLoader = {
+  test: /\.svg$/,
+  include: /(src\/icons)/,
+  use: [
+    'next-babel-loader',
+    'svg-react-loader',
+  ],
 };
 
 module.exports = withCSS(withSass({
@@ -57,6 +67,7 @@ module.exports = withCSS(withSass({
     });
 
     newConfig.module.rules.push(fileLoader);
+    newConfig.module.rules.push(svgReactLoader);
     newConfig.resolve.modules = [...config.resolve.modules, path.resolve(__dirname, 'src')];
 
     return newConfig;
