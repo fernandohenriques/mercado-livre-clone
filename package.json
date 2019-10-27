@@ -8,11 +8,16 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "eslint . --fix"
+    "lint:js": "eslint . --fix",
+    "lint:css": "stylelint **/*.scss --fix"
   },
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
       "git add"
     ]
   },
@@ -52,7 +57,11 @@
     "lint-staged": "^9.4.2",
     "node-sass": "^4.12.0",
     "object-hash": "^2.0.0",
-    "sass-resources-loader": "^2.0.1"
+    "sass-resources-loader": "^2.0.1",
+    "stylelint": "^11.1.1",
+    "stylelint-config-primer": "^8.2.1",
+    "stylelint-config-sass-guidelines": "^6.1.0",
+    "stylelint-config-standard": "^19.0.0"
   },
   "repository": "https://github.com/fernandohenriques/mercado-livre-clone.git",
   "author": "Fernando Henriques",

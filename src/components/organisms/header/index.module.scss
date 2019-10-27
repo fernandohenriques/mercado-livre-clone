@@ -1,9 +1,9 @@
 .header {
-  width: 100%;
-  padding: rem(10px) 0;
-  background-color: $color-primary;
-
   @include flex-default();
+
+  background-color: $color-primary;
+  padding: rem(10px) 0;
+  width: 100%;
 
   figure {
     margin: 0;
