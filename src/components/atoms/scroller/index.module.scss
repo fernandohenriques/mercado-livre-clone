@@ -1,0 +1,14 @@
+.container {
+  flex: 1;
+  overflow: hidden;
+
+  &.vertical {
+    @include v-scroll;
+
+    touch-action: pan-y;
+  }
+
+  &.horizontal {
+    @include h-scroll;
+  }
+}

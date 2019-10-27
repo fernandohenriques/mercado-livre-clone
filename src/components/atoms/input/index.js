@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef, useImperativeHandle, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -8,18 +8,12 @@ const Input = ({
   autofocus,
   className,
   ...restProps
-}, ref) => {
+}) => {
   const inputRef = useRef();
 
   useEffect(() => {
     if (autofocus) inputRef.current.focus();
   }, [autofocus]);
-
-  useImperativeHandle(ref, () => ({
-    focus: () => {
-      inputRef.current.focus();
-    },
-  }));
 
   return <input ref={inputRef} className={classnames(styles.input, className)} {...restProps} />;
 };
@@ -37,4 +31,4 @@ Input.defaultProps = {
   className: null,
 };
 
-export default forwardRef(Input);
+export default Input;
