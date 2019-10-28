@@ -10,9 +10,13 @@
 
     width: 80%;
 
-    figure {
+    .logo {
       display: flex;
       margin: 0 rem(25px) 0 0;
+
+      figure {
+        margin: 0;
+      }
     }
   }
 }

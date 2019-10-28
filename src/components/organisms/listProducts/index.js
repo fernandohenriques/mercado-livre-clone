@@ -9,7 +9,7 @@ const ListProducts = ({ products }) => products.map((product, i) => {
     title,
     picture,
     price: { amount },
-    adress: { state_name: stateName },
+    address: { state_name: stateName },
     free_shipping: freeShipping,
   } = product;
 

@@ -9,7 +9,8 @@
     "start": "next start",
     "test": "jest",
     "lint:js": "eslint . --fix",
-    "lint:css": "stylelint **/*.scss --fix"
+    "lint:css": "stylelint **/*.scss --fix",
+    "test:coverage": "jest --coverage --colors"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -54,6 +55,7 @@
     "autoprefixer": "^9.7.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
+    "dotenv-webpack": "^1.7.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "5.16.0",

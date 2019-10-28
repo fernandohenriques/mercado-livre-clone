@@ -1,5 +1,7 @@
+require('dotenv').config();
 const path = require('path');
 const hash = require('object-hash');
+const Dotenv = require('dotenv-webpack');
 const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 
@@ -42,7 +44,7 @@ module.exports = withCSS(withSass({
   cssLoaderOptions: {
     sourceMap: true,
     importLoaders: 4,
-    localsConvention: 'camelCase',
+    camelCase: true,
     getLocalIdent: (loaderContext, _, localName) => {
       const filePath = loaderContext.resourcePath;
 
@@ -70,6 +72,19 @@ module.exports = withCSS(withSass({
     newConfig.module.rules.push(fileLoader);
     newConfig.module.rules.push(svgReactLoader);
     newConfig.resolve.modules = [...config.resolve.modules, path.resolve(__dirname, 'src')];
+
+    newConfig.plugins = [
+      ...config.plugins,
+
+      new Dotenv({
+        path: path.join(__dirname, '.env'),
+        systemvars: true,
+      }),
+    ];
+
+    newConfig.node = {
+      fs: 'empty',
+    };
 
     return newConfig;
   },
