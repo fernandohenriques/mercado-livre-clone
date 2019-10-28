@@ -17,4 +17,10 @@ const Products = () => (
   </Page>
 );
 
+/* Products.getInitialProps = async ({ store, req }) => {
+  console.log(store);
+  console.log(req);
+  return { };
+} */
+
 export default Products;

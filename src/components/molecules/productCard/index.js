@@ -9,9 +9,9 @@ const ProductCard = ({ product: {
   price,
   stateName,
   freeShipping,
-}}) => (
-  <div className={styles.card}>
-    <img src={photoUrl} title={title} />
+} }) => (
+  <div className={styles.card} data-id={id}>
+    <img src={photoUrl} title={title} alt={title} />
     <div className={styles.data}>
       <div className={styles.priceAndTitle}>
         <div className={styles.price}>
@@ -25,6 +25,7 @@ const ProductCard = ({ product: {
         {stateName}
       </div>
     </div>
+    {freeShipping}
   </div>
 );
 
@@ -37,12 +38,9 @@ ProductCard.propTypes = {
       amount: PropTypes.number.isRequired,
       decimals: PropTypes.number,
     },
-    picture: PropTypes.string.isRequired,
-    free_shipping: PropTypes.bool.isRequired,
-    address: {
-      state_id: PropTypes.string,
-      state_name: PropTypes.string.isRequired,
-    },
+    photoUrl: PropTypes.string.isRequired,
+    freeShipping: PropTypes.bool.isRequired,
+    stateName: PropTypes.string.isRequired,
   }).isRequired,
 };
 

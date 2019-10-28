@@ -1,24 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from 'components/atoms/divider';
-import ProductCard from 'components/atoms/productCard';
+import ProductCard from 'components/molecules/productCard';
 
-const ListProducts = ({ products }) =>
-  products.map((product, i) => {
-    const { id, title, picture, price: { amount }, adress: { state_name }, free_shipping } = product;
-    return (
-      <>
-        <ProductCard
-          key={id}
-          id={id}
-          title={title}
-          photoUrl={picture}
-          stateName={state_name}
-          freeShipping={free_shipping} />
-        {products.length !== (i+1) ? <Divider /> : null}
-      </>
-    );
-  });
+const ListProducts = ({ products }) => products.map((product, i) => {
+  const {
+    id,
+    title,
+    picture,
+    price: { amount },
+    adress: { state_name: stateName },
+    free_shipping: freeShipping,
+  } = product;
+
+  return (
+    <>
+      <ProductCard
+        key={id}
+        id={id}
+        title={title}
+        price={amount}
+        photoUrl={picture}
+        stateName={stateName}
+        freeShipping={freeShipping} />
+      {products.length !== (i + 1) ? <Divider /> : null}
+    </>
+  );
+});
 
 ListProducts.propTypes = {
   products: PropTypes.arrayOf(

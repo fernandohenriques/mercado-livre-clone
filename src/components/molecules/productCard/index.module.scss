@@ -1,11 +1,11 @@
 .card {
-  width: 100%;
   padding: 1rem;
+  width: 100%;
 
   img {
-    width: rem(180px);
-    height: rem(180px);
     border-radius: rem(4px);
+    height: rem(180px);
+    width: rem(180px);
   }
 
   .data {
