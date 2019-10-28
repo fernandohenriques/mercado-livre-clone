@@ -1,0 +1,26 @@
+.card {
+  width: 100%;
+  padding: 1rem;
+
+  img {
+    width: rem(180px);
+    height: rem(180px);
+    border-radius: rem(4px);
+  }
+
+  .data {
+    padding-right: 1rem;
+    width: calc(100% - 180px);
+
+    .price-and-title {
+      .price {
+        font-size: 1.5rem;
+        margin-bottom: rem(32px);
+      }
+
+      .title {
+        font-size: rem(18px);
+      }
+    }
+  }
+}

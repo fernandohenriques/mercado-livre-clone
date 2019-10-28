@@ -1,0 +1,11 @@
+.container {
+  height: auto;
+  min-height: 100%;
+  width: 80%;
+
+  .products {
+    background-color: $color-white;
+    border-radius: rem(4px);
+    width: 100%;
+  }
+}

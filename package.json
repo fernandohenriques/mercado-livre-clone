@@ -32,6 +32,8 @@
   ],
   "dependencies": {
     "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
