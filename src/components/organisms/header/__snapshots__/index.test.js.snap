@@ -8,22 +8,31 @@ exports[`<Header /> Snapshot testing 1`] = `
     <div
       class="container"
     >
-      <figure>
-        <img
-          alt="Mercado Livre - Onde comprar e vender de Tudo"
-          src="logo.png"
-          title="Mercado Livre - Onde comprar e vender de Tudo"
-        />
-      </figure>
+      <div
+        class="logo"
+        role="button"
+        tabindex="0"
+      >
+        <figure>
+          <img
+            alt="Mercado Livre - Onde comprar e vender de Tudo"
+            src="logo.png"
+            title="Mercado Livre - Onde comprar e vender de Tudo"
+          />
+        </figure>
+      </div>
       <div
         class="container"
       >
         <input
-          class="input"
+          class="input input"
           placeholder="Buscar produtos..."
           type="text"
+          value=""
         />
-        <button>
+        <button
+          type="button"
+        >
           <img
             alt="Buscar"
             src="ic-search.png"

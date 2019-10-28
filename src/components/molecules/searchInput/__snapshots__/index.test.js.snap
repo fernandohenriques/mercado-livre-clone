@@ -6,11 +6,14 @@ exports[`<SearchInput /> Snapshot testing 1`] = `
     class="container"
   >
     <input
-      class="input"
+      class="input input"
       placeholder="Buscar produtos..."
       type="text"
+      value=""
     />
-    <button>
+    <button
+      type="button"
+    >
       <img
         alt="Buscar"
         src="ic-search.png"
