@@ -10,6 +10,7 @@ const resourcesLoader = {
       'src/styles/helpers/_var.scss',
       'node_modules/sass-rem/_rem.scss',
       'src/styles/helpers/_mixins.scss',
+      'src/styles/helpers/_extends.scss',
     ],
   },
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from 'components/atoms/input';
+import SearchInput from 'components/molecules/searchInput';
 
 import logo from 'assets/images/logo.png';
 import styles from './index.module.scss';
@@ -13,7 +13,7 @@ const Header = () => {
         <figure>
           <img src={logo} title={altText} alt={altText} />
         </figure>
-        <Input type="text" placeholder="Buscar produtos..." autofocus />
+        <SearchInput onSearch={() => console.log('saerch term')} />
       </div>
     </header>
   );

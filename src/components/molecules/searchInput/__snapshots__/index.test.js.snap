@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchInput /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <input
+      class="input"
+      placeholder="Buscar produtos..."
+      type="text"
+    />
+    <button>
+      <img
+        alt="Buscar"
+        src="ic-search.png"
+        title="Buscar"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;

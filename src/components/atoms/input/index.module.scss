@@ -1,11 +1,12 @@
 $font-size-input: rem(18px);
 
 .input {
-  &[type=text] {
+  &[type='text'] {
+    @extend %box-shaddow-default;
+
     background-color: $color-white;
     border: 0;
     border-radius: rem(2px);
-    box-shadow: 0 rem(1px) rem(2px) 0 rgba(0, 0, 0, .1);
     font-family: $font-family;
     font-size: $font-size-input;
     outline: 0;

@@ -1,0 +1,28 @@
+.container {
+  background-color: transparent;
+  padding: 0 1.5rem 0 0;
+  position: relative;
+  width: 100%;
+
+  button {
+    @include flex-default();
+
+    background-color: $background-color;
+    border: 0;
+    border-bottom-right-radius: rem(2px);
+    border-top-right-radius: rem(2px);
+    cursor: pointer;
+    outline: none;
+    padding: rem(9px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(40px);
+  }
+}
+
+.input {
+  &[type='text'] {
+    padding-left: rem(15px);
+  }
+}

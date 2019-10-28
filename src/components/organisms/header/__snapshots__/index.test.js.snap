@@ -15,11 +15,22 @@ exports[`<Header /> Snapshot testing 1`] = `
           title="Mercado Livre - Onde comprar e vender de Tudo"
         />
       </figure>
-      <input
-        class="input"
-        placeholder="Buscar produtos..."
-        type="text"
-      />
+      <div
+        class="container"
+      >
+        <input
+          class="input"
+          placeholder="Buscar produtos..."
+          type="text"
+        />
+        <button>
+          <img
+            alt="Buscar"
+            src="ic-search.png"
+            title="Buscar"
+          />
+        </button>
+      </div>
     </div>
   </header>
 </DocumentFragment>
