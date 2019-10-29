@@ -34,6 +34,14 @@ const Products = ({ products, categories }) => {
     }
   }, [setState]);
 
+  useEffect(() => {
+    setState((prevState) => ({
+      ...prevState,
+      products,
+      categories,
+    }));
+  }, [products, categories, setState]);
+
   return (
     <Page title="Mercado Livre - Resultado de Busca">
       <section className={styles.container}>
