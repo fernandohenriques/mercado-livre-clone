@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount, render as renderDOM } from 'enzyme';
-import { render } from '@testing-library/react';
+import { mount, render } from 'enzyme';
+import { render as renderDOM } from '@testing-library/react';
 import Input from './index';
 
 describe('<Input />', () => {
   it('Snapshot testing', () => {
-    const { asFragment } = render(
+    const { asFragment } = renderDOM(
       <Input type="text" placeholder="Search products..." autofocus />
     );
 
@@ -13,7 +13,7 @@ describe('<Input />', () => {
   });
 
   it('Should use props className as CSS class', () => {
-    const wrapper = renderDOM(
+    const wrapper = render(
       <Input type="text" className="test-input" />
     );
 
