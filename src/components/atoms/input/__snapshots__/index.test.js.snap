@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <input
+    class="input"
+    placeholder="Search products..."
+    type="text"
+  />
+</DocumentFragment>
+`;
