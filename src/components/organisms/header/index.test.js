@@ -18,4 +18,11 @@ describe('<Header />', () => {
     expect(wrapper.find('header')).toHaveLength(1);
     expect(wrapper.find('figure')).toHaveLength(1);
   });
+
+  it('Should render SearchInput component with empty value', () => {
+    const wrapper = shallow(<Header />);
+
+    expect(wrapper.find('SearchInput')).toHaveLength(1);
+    expect(wrapper.find('SearchInput').props().value).toBe('');
+  });
 });

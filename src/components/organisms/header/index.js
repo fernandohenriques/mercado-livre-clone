@@ -14,8 +14,6 @@ const Header = () => {
     if (url.searchParams.has('search')) setTerm(url.searchParams.get('search'));
   }, [setTerm]);
 
-  const altText = 'Mercado Livre - Onde comprar e vender de Tudo';
-
   const goToHome = () => {
     Router.push('/');
   };
@@ -23,6 +21,8 @@ const Header = () => {
   const handleSearch = (search) => {
     if (search && search !== '') Router.push(`/items?search=${search}`);
   };
+
+  const altText = 'Mercado Livre - Onde comprar e vender de Tudo';
 
   return (
     <header className={styles.header}>

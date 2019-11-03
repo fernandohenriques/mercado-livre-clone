@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Api from 'services/api';
 import Page from 'components/templates/page';
-import Scroller from 'components/atoms/scroller';
+import SuperCard from 'components/atoms/superCard';
 import Breadcrumbs from 'components/atoms/breadcrumbs';
 import ListProducts from 'components/organisms/listProducts';
 
@@ -46,9 +46,9 @@ const Products = ({ products, categories }) => {
     <Page title="Mercado Livre - Resultado de Busca">
       <section className={styles.container}>
         <Breadcrumbs categories={state.categories} />
-        <Scroller className={styles.products}>
+        <SuperCard className={styles.products}>
           <ListProducts products={state.products} />
-        </Scroller>
+        </SuperCard>
       </section>
     </Page>
   );

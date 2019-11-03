@@ -7,10 +7,6 @@ import SearchInput from './index';
 describe('<SearchInput />', () => {
   const onSearch = jest.fn();
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('Snapshot testing', () => {
     const { asFragment } = render(
       <SearchInput onSearch={onSearch} />
@@ -39,7 +35,7 @@ describe('<SearchInput />', () => {
     expect(onSearch).toHaveBeenCalledTimes(1);
   });
 
-  it('Should update inputText state if enter text on input', () => {
+  it('Should update Input props value if enter text on input', () => {
     const value = 'Hello';
     const wrapper = mount(
       <SearchInput value="term" onSearch={onSearch} />

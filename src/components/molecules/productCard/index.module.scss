@@ -21,13 +21,22 @@
       width: 90%;
 
       .price {
+        @include flex-default();
+
         font-size: 1.5rem;
+        justify-content: flex-start;
         margin-bottom: 1.5rem;
       }
 
       .title {
         font-size: rem(18px);
         padding-right: 1rem;
+      }
+
+      img {
+        height: rem(18px);
+        margin-left: .5rem;
+        width: rem(18px);
       }
     }
 

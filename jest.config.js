@@ -19,5 +19,11 @@ module.exports = {
     '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
     '^-!svg-react-loader(.*)$': '<rootDir>/src/config/tests/__mocks__/svgReactLoaderImport.js',
   },
+  collectCoverageFrom: [
+    'pages/**/*.js',
+    'src/**/*.{js,jsx}',
+    '!src/config/tests/**',
+    '!**/node_modules/**',
+  ],
   coverageDirectory: 'coverage',
 };

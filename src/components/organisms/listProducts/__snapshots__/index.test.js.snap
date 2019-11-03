@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListProducts /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+    data-id="1"
+  >
+    <img
+      alt="Kit de Perfumes"
+      src="https://images.mercadolivre.com.br/imgone.png"
+      title="Kit de Perfumes"
+    />
+    <div
+      class="data"
+    >
+      <div
+        class="priceAndTitle"
+      >
+        <div
+          class="price"
+        >
+          $ 50.00
+        </div>
+        <span
+          class="title"
+        >
+          Kit de Perfumes
+        </span>
+      </div>
+      <div
+        class="state"
+      >
+        São Paulo
+      </div>
+    </div>
+  </div>
+  <div
+    class="divider"
+  />
+  <div
+    class="card"
+    data-id="2"
+  >
+    <img
+      alt="Tênis All Star"
+      src="https://images.mercadolivre.com.br/imgtwo.png"
+      title="Tênis All Star"
+    />
+    <div
+      class="data"
+    >
+      <div
+        class="priceAndTitle"
+      >
+        <div
+          class="price"
+        >
+          $ 60.00
+          <img
+            src="ic-shipping.png"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Tênis All Star
+        </span>
+      </div>
+      <div
+        class="state"
+      >
+        Rio de Janeiro
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

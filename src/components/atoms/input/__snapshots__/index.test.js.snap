@@ -4,7 +4,7 @@ exports[`<Input /> Snapshot testing 1`] = `
 <DocumentFragment>
   <input
     class="input"
-    placeholder="Search products..."
+    placeholder="Enter text here..."
     type="text"
   />
 </DocumentFragment>

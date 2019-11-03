@@ -1,31 +1,34 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
-import { render as renderDOM } from '@testing-library/react';
+import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import Input from './index';
 
 describe('<Input />', () => {
+  const placeholder = 'Enter text here...';
+
   it('Snapshot testing', () => {
-    const { asFragment } = renderDOM(
-      <Input type="text" placeholder="Search products..." autofocus />
+    const { asFragment } = render(
+      <Input type="text" placeholder={placeholder} autofocus />
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('Should use props className as CSS class', () => {
-    const wrapper = render(
-      <Input type="text" className="test-input" />
-    );
-
-    expect(wrapper.hasClass('input')).toBe(true);
-    expect(wrapper.hasClass('test-input')).toBe(true);
-  });
-
   it('Should props autofocus as default false', () => {
-    const wrapper = mount(
-      <Input type="text" placeholder="Enter text here..." />
-    );
+    const wrapper = mount(<Input type="text" placeholder={placeholder} />);
 
     expect(wrapper.props().autofocus).toBe(false);
+  });
+
+  it('Should render props type, placeholder and value on native input', () => {
+    const defaultValue = 'Hello';
+    const { getByPlaceholderText } = render(
+      <Input type="text" defaultValue={defaultValue} placeholder={placeholder} />
+    );
+    const input = getByPlaceholderText(placeholder);
+
+    expect(input.type).toBe('text');
+    expect(input.value).toBe(defaultValue);
+    expect(input.placeholder).toBe(placeholder);
   });
 });

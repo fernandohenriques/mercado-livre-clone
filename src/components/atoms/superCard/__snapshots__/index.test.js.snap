@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SuperCard /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div>
+      Awesome content
+    </div>
+  </div>
+</DocumentFragment>
+`;

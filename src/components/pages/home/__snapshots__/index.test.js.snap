@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages <Home /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="logo"
+        role="button"
+        tabindex="0"
+      >
+        <figure>
+          <img
+            alt="Mercado Livre - Onde comprar e vender de Tudo"
+            src="logo.png"
+            title="Mercado Livre - Onde comprar e vender de Tudo"
+          />
+        </figure>
+      </div>
+      <div
+        class="container"
+      >
+        <input
+          class="input input"
+          placeholder="Buscar produtos..."
+          type="text"
+          value=""
+        />
+        <button
+          type="button"
+        >
+          <img
+            alt="Buscar"
+            src="ic-search.png"
+            title="Buscar"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div
+      class="container"
+    >
+      <h3>
+        Encontre tudo que precisa.
+      </h3>
+    </div>
+  </main>
+</DocumentFragment>
+`;
