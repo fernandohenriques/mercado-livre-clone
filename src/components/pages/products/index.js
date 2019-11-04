@@ -1,103 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Api from 'services/api';
+import { connect } from 'react-redux';
+
 import Page from 'components/templates/page';
+import Loading from 'components/atoms/loading';
 import SuperCard from 'components/atoms/superCard';
 import Breadcrumbs from 'components/atoms/breadcrumbs';
 import ListProducts from 'components/organisms/listProducts';
+import { fetchSearch as fetchSearchAction } from 'store/ducks/search';
 
 import styles from './index.module.scss';
 
-const Products = ({ products, categories }) => {
-  const [state, setState] = useState({
-    products,
-    categories,
-  });
+const Products = ({ loading, products, categories }) => (
+  <Page title="Mercado Livre - Resultado de Busca">
+    <section className={styles.container}>
+      {loading ? <Loading /> : (
+        <>
+          <Breadcrumbs categories={categories} />
+          <SuperCard className={styles.products}>
+            <ListProducts products={products} />
+          </SuperCard>
+        </>
+      )}
+    </section>
+  </Page>
+);
 
-  const getProducts = async (search, refSetState) => {
-    const { getProducts: getProductsFromApi } = new Api();
-    const { categories: categoriesFromApi, items: productsFromApi } = await getProductsFromApi(search);
+Products.getInitialProps = ({ store, query: { search } }) => {
+  if (search && search !== '') return store.dispatch(fetchSearchAction(search));
 
-    refSetState((prevState) => ({
-      ...prevState,
-      products: productsFromApi,
-      categories: categoriesFromApi,
-    }));
-  };
-
-  useEffect(() => {
-    const url = new URL(document.location);
-
-    if (url.searchParams.has('search')) {
-      const search = url.searchParams.get('search');
-      getProducts(search, setState);
-    }
-  }, [setState]);
-
-  useEffect(() => {
-    setState((prevState) => ({
-      ...prevState,
-      products,
-      categories,
-    }));
-  }, [products, categories, setState]);
-
-  return (
-    <Page title="Mercado Livre - Resultado de Busca">
-      <section className={styles.container}>
-        <Breadcrumbs categories={state.categories} />
-        <SuperCard className={styles.products}>
-          <ListProducts products={state.products} />
-        </SuperCard>
-      </section>
-    </Page>
-  );
-};
-
-Products.getInitialProps = async ({ query: { search } }) => {
-  const emptyResult = {
-    products: [],
-    categories: [],
-  };
-
-  if (search && search !== '') {
-    const { getProducts } = new Api();
-
-    try {
-      const { categories, items: products } = await getProducts(search);
-      return { products, categories };
-    } catch (e) {
-      return emptyResult;
-    }
-  }
-
-  return emptyResult;
+  return {};
 };
 
 Products.propTypes = {
+  loading: PropTypes.bool,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      price: {
+      price: PropTypes.shape({
         currency: PropTypes.string.isRequired,
         amount: PropTypes.number.isRequired,
         decimals: PropTypes.number,
-      },
+      }).isRequired,
       picture: PropTypes.string.isRequired,
       free_shipping: PropTypes.bool.isRequired,
-      address: {
+      address: PropTypes.shape({
         state_id: PropTypes.string,
         state_name: PropTypes.string.isRequired,
-      },
+      }).isRequired,
     }).isRequired,
   ),
   categories: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
 
 Products.defaultProps = {
+  loading: false,
   products: [],
   categories: [],
 };
 
-export default Products;
+const mapStateToProps = ({ search: { loading, result } }) => ({
+  loading,
+  categories: result.categories,
+  products: result.products,
+});
+export default connect(mapStateToProps)(Products);

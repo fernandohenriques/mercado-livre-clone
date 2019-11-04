@@ -1,16 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
 import { render } from '@testing-library/react';
 
 import Page from './index';
 
 describe('<Page />', () => {
   it('Snapshot testing', () => {
+    const mockStore = configureMockStore();
+    const store = mockStore({});
+
     const { asFragment } = render(
-      <Page title="Busca de Produtos">
-        <h1>Busca</h1>
-      </Page>
+      <Provider store={store}>
+        <Page title="Busca de Produtos">
+          <h1>Busca</h1>
+        </Page>
+      </Provider>
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 

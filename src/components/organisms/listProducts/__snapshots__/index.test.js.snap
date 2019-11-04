@@ -58,7 +58,9 @@ exports[`<ListProducts /> Snapshot testing 1`] = `
         >
           $ 60.00
           <img
+            alt="Envío gratis"
             src="ic-shipping.png"
+            title="Envío gratis"
           />
         </div>
         <span

@@ -1,0 +1,39 @@
+.loading {
+  @include flex-default();
+
+  width: 100%;
+
+  &::before,
+  &::after {
+    animation: kick .6s infinite alternate;
+    background-color: $color-primary;
+    border-radius: 50%;
+    content: '';
+    height: rem(20px);
+    left: calc(50% - 10px);
+    position: absolute;
+    top: calc(50% - 10px);
+    width: rem(20px);
+  }
+
+  &::after {
+    animation: kick .6s infinite alternate;
+    margin-left: rem(-30px);
+  }
+
+  &::before {
+    animation-delay: .2s;
+  }
+}
+
+@keyframes kick {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: .3;
+    transform: translateY(-1rem);
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
+import debounce from 'lodash.debounce';
 import SearchInput from 'components/molecules/searchInput';
 
 import logo from 'assets/images/logo.png';
@@ -18,8 +19,12 @@ const Header = () => {
     Router.push('/');
   };
 
+  const bounceOnSearch = debounce((search) => {
+    Router.push(`/items?search=${search}`);
+  }, 750);
+
   const handleSearch = (search) => {
-    if (search && search !== '') Router.push(`/items?search=${search}`);
+    if (search && search !== '') bounceOnSearch(search);
   };
 
   const altText = 'Mercado Livre - Onde comprar e vender de Tudo';

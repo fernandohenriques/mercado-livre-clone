@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 import Input from 'components/atoms/input';
 
 import searchIcon from 'assets/images/ic-search.png';
@@ -13,11 +12,9 @@ const SearchInput = ({ value, onSearch }) => {
     setInputText(value);
   }, [value, setInputText]);
 
-  const bounceOnSearch = debounce(onSearch, 1000);
-
   const handleInput = (e) => {
     setInputText(e.target.value);
-    bounceOnSearch(e.target.value);
+    if (e.target.value > 2) onSearch(e.target.value);
   };
 
   const handleSearch = () => {
