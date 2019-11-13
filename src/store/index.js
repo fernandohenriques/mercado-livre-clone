@@ -2,9 +2,9 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 import search from './ducks/search';
-import products from './ducks/products';
+import product from './ducks/product';
 
-const reducers = combineReducers({ search, products });
+const reducers = combineReducers({ search, product });
 
 const makeStore = (initialStore = {}) => createStore(reducers, initialStore, applyMiddleware(thunk));
 
