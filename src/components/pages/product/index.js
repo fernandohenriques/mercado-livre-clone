@@ -11,13 +11,17 @@ import { fetchProduct as fetchProductAction } from 'store/ducks/product';
 import styles from './index.module.scss';
 
 const Product = ({ loading, product, categories }) => (
-  <Page title={`Mercado Livre - ${product.title}`}>
+  <Page title={`Mercado Livre - ${product ? product.title : 'Produto não encontrado'}`}>
     <section className={styles.container}>
       {loading ? <Loading /> : (
         <>
           <Breadcrumbs categories={categories} />
           <SuperCard className={styles.product}>
-            teste
+            {product ? (
+              <>
+                Informações do produto
+              </>
+            ) : <h3>Produto não encontrado.</h3>}
           </SuperCard>
         </>
       )}
@@ -45,10 +49,6 @@ Product.propTypes = {
     picture: PropTypes.string.isRequired,
     free_shipping: PropTypes.bool.isRequired,
     sold_quantity: PropTypes.number,
-    address: PropTypes.shape({
-      state_id: PropTypes.string,
-      state_name: PropTypes.string.isRequired,
-    }).isRequired,
   }),
   categories: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
@@ -59,14 +59,10 @@ Product.defaultProps = {
   categories: [],
 };
 
-const mapStateToProps = ({ product: { loading, products }, search: { result } }) => {
-  const productId = document.location.href.split('/').pop();
-
-  return {
-    loading,
-    product: products.find((item) => item.id === productId),
-    categories: result.categories,
-  };
-};
+const mapStateToProps = ({ product: { loading, lastIdfetched, products }, search: { result } }) => ({
+  loading,
+  product: products.find((item) => item.id === lastIdfetched),
+  categories: result.categories,
+});
 
 export default connect(mapStateToProps)(Product);

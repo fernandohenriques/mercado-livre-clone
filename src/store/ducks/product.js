@@ -3,6 +3,7 @@ import Api from 'services/api';
 const initialState = {
   loading: false,
   error: false,
+  lastIdfetched: null,
   products: [{
     id: 0,
     title: '',
@@ -48,8 +49,10 @@ const reducer = (state = initialState, action) => {
   case FETCH_PRODUCT_SUCCESS: {
     const product = action.payload;
     return {
+      ...state,
       error: false,
       loading: false,
+      lastIdfetched: product.id,
       products: [...state.products, product],
     };
   }
@@ -69,7 +72,7 @@ const fetchProduct = (id) => {
   const { getProduct } = new Api();
 
   return async (dispatch, getState) => {
-    const { products } = getState();
+    const { product: { products } } = getState();
     const product = products.find((item) => item.id === id);
 
     if (product) return;

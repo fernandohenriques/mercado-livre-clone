@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import freeShippingIcon from 'assets/images/ic-shipping.png';
@@ -15,23 +16,25 @@ const ProductCard = ({
   const freeShippingText = 'Envío gratis';
 
   return (
-    <div className={styles.card} data-id={id}>
-      <img src={photoUrl} title={title} alt={title} />
-      <div className={styles.data}>
-        <div className={styles.priceAndTitle}>
-          <div className={styles.price}>
-            {`$ ${price.toFixed(2)}`}
-            {freeShipping ? <img src={freeShippingIcon} alt={freeShippingText} title={freeShippingText} /> : null}
+    <Link href={`/items/item?id=${id}`} as={`/items/${id}`}>
+      <div className={styles.card}>
+        <img src={photoUrl} title={title} alt={title} />
+        <div className={styles.data}>
+          <div className={styles.priceAndTitle}>
+            <div className={styles.price}>
+              {`$ ${price.toFixed(2)}`}
+              {freeShipping ? <img src={freeShippingIcon} alt={freeShippingText} title={freeShippingText} /> : null}
+            </div>
+            <span className={styles.title}>
+              {title}
+            </span>
           </div>
-          <span className={styles.title}>
-            {title}
-          </span>
-        </div>
-        <div className={styles.state}>
-          {stateName}
+          <div className={styles.state}>
+            {stateName}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
