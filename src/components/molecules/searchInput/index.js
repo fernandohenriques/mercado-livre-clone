@@ -14,7 +14,7 @@ const SearchInput = ({ value, onSearch }) => {
 
   const handleInput = (e) => {
     setInputText(e.target.value);
-    if (e.target.value > 2) onSearch(e.target.value);
+    if (e.target.value.length > 2) onSearch(e.target.value);
   };
 
   const handleSearch = () => {

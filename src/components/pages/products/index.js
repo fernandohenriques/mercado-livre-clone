@@ -65,4 +65,5 @@ const mapStateToProps = ({ search: { loading, result } }) => ({
   categories: result.categories,
   products: result.products,
 });
+
 export default connect(mapStateToProps)(Products);
