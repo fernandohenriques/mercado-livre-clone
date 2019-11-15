@@ -4,7 +4,6 @@ exports[`<ListProducts /> Snapshot testing 1`] = `
 <DocumentFragment>
   <div
     class="card"
-    data-id="1"
   >
     <img
       alt="Kit de Perfumes"
@@ -40,7 +39,6 @@ exports[`<ListProducts /> Snapshot testing 1`] = `
   />
   <div
     class="card"
-    data-id="2"
   >
     <img
       alt="Tênis All Star"

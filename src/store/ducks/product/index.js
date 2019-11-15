@@ -3,9 +3,9 @@ import Api from 'services/api';
 const initialState = {
   loading: false,
   error: false,
-  lastIdfetched: null,
+  lastIdfetched: 'MLA0',
   products: [{
-    id: 0,
+    id: 'MLA0',
     title: '',
     description: '',
     picture: '',

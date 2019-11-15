@@ -2,7 +2,7 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 import search from './ducks/search';
-import product from './ducks/product';
+import product from './ducks/product/index';
 
 const reducers = combineReducers({ search, product });
 

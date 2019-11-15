@@ -1,6 +1,7 @@
 .card {
   @include flex-default();
 
+  cursor: pointer;
   padding: 1rem 0;
   width: 100%;
 

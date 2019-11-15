@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages <Product /> Snapshot testing 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="logo"
+        role="button"
+        tabindex="0"
+      >
+        <figure>
+          <img
+            alt="Mercado Livre - Onde comprar e vender de Tudo"
+            src="logo.png"
+            title="Mercado Livre - Onde comprar e vender de Tudo"
+          />
+        </figure>
+      </div>
+      <div
+        class="container"
+      >
+        <input
+          class="input input"
+          placeholder="Buscar produtos..."
+          type="text"
+          value=""
+        />
+        <button
+          type="button"
+        >
+          <img
+            alt="Buscar"
+            src="ic-search.png"
+            title="Buscar"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section
+      class="container"
+    >
+      <div
+        class="container"
+      />
+      <div
+        class="container product"
+      >
+        <div
+          class="cover"
+        >
+          <img
+            alt=""
+            src=""
+            title=""
+          />
+        </div>
+        <div
+          class="data"
+        >
+          <div
+            class="condition"
+          >
+            undefined - 0 vendidos
+          </div>
+          <div
+            class="name"
+          >
+            <strong />
+          </div>
+          <div
+            class="price"
+          >
+            <strong>
+              $ 0.00
+            </strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</DocumentFragment>
+`;

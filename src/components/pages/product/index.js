@@ -10,24 +10,45 @@ import { fetchProduct as fetchProductAction } from 'store/ducks/product';
 
 import styles from './index.module.scss';
 
-const Product = ({ loading, product, categories }) => (
-  <Page title={`Mercado Livre - ${product ? product.title : 'Produto não encontrado'}`}>
-    <section className={styles.container}>
-      {loading ? <Loading /> : (
-        <>
-          <Breadcrumbs categories={categories} />
-          <SuperCard className={styles.product}>
-            {product ? (
-              <>
-                Informações do produto
-              </>
-            ) : <h3>Produto não encontrado.</h3>}
-          </SuperCard>
-        </>
-      )}
-    </section>
-  </Page>
-);
+const Product = ({ loading, product, categories }) => {
+  const conditions = new Map([
+    ['new', 'Nuevo'],
+  ]);
+
+  const hasSoldQuantity = typeof product.sold_quantity !== 'undefined';
+
+  return (
+    <Page title={`Mercado Livre - ${product ? product.title : 'Produto não encontrado'}`}>
+      <section className={styles.container}>
+        {loading ? <Loading /> : (
+          <>
+            <Breadcrumbs categories={categories} />
+            <SuperCard className={styles.product}>
+              {product ? (
+                <>
+                  <div className={styles.cover}>
+                    <img src={product.picture} alt={product.title} title={product.title} />
+                  </div>
+                  <div className={styles.data}>
+                    <div className={styles.condition}>
+                      {`${conditions.get(product.condition)}${hasSoldQuantity ? ` - ${product.sold_quantity} vendidos` : ''}`}
+                    </div>
+                    <div className={styles.name}>
+                      <strong>{product.title}</strong>
+                    </div>
+                    <div className={styles.price}>
+                      <strong>{`$ ${product.price.amount.toFixed(2)}`}</strong>
+                    </div>
+                  </div>
+                </>
+              ) : <h3>Produto não encontrado.</h3>}
+            </SuperCard>
+          </>
+        )}
+      </section>
+    </Page>
+  );
+};
 
 Product.getInitialProps = ({ store, query: { id } }) => {
   if (id && id !== '') return store.dispatch(fetchProductAction(id));
@@ -47,6 +68,7 @@ Product.propTypes = {
       decimals: PropTypes.number,
     }).isRequired,
     picture: PropTypes.string.isRequired,
+    condition: PropTypes.string.isRequired,
     free_shipping: PropTypes.bool.isRequired,
     sold_quantity: PropTypes.number,
   }),

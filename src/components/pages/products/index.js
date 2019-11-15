@@ -39,7 +39,7 @@ Products.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       price: PropTypes.shape({
-        currency: PropTypes.string.isRequired,
+        currency: PropTypes.string,
         amount: PropTypes.number.isRequired,
         decimals: PropTypes.number,
       }).isRequired,
