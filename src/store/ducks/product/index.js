@@ -88,5 +88,5 @@ const fetchProduct = (id) => {
   };
 };
 
-export { initialState, fetchProduct };
+export { initialState, fetchProduct, actionTypes };
 export default reducer;
