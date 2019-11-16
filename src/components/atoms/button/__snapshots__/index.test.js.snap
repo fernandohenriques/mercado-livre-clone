@@ -5,6 +5,7 @@ exports[`<Button /> Snapshot testing 1`] = `
   <button
     class="button"
     title="Comprar"
+    type="button"
   >
     Comprar
   </button>

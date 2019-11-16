@@ -43,7 +43,7 @@ exports[`pages <Product /> Snapshot testing 1`] = `
     </div>
   </header>
   <main>
-    <section
+    <div
       class="container"
     >
       <div
@@ -52,38 +52,49 @@ exports[`pages <Product /> Snapshot testing 1`] = `
       <div
         class="container product"
       >
-        <div
-          class="cover"
-        >
-          <img
-            alt=""
-            src=""
-            title=""
-          />
-        </div>
-        <div
-          class="data"
+        <section
+          class="coverAndData"
         >
           <div
-            class="condition"
+            class="cover"
           >
-            undefined - 0 vendidos
+            <img
+              alt=""
+              src=""
+              title=""
+            />
           </div>
           <div
-            class="name"
+            class="data"
           >
-            <strong />
+            <div
+              class="condition"
+            >
+              Nuevo - 0 vendidos
+            </div>
+            <div
+              class="name"
+            >
+              <strong />
+            </div>
+            <div
+              class="price"
+            >
+              <strong>
+                $ 0.00
+              </strong>
+            </div>
+            <button
+              class="button"
+              title="Comprar"
+              type="button"
+            >
+              Comprar
+            </button>
           </div>
-          <div
-            class="price"
-          >
-            <strong>
-              $ 0.00
-            </strong>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   </main>
 </DocumentFragment>
 `;

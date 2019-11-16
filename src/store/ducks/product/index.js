@@ -12,6 +12,7 @@ const initialState = {
     price: {
       amount: 0,
     },
+    condition: 'new',
     sold_quantity: 0,
     free_shipping: false,
   }],
