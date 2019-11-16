@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Button from 'components/atoms/button';
 import Page from 'components/templates/page';
 import Loading from 'components/atoms/loading';
 import SuperCard from 'components/atoms/superCard';
@@ -39,6 +40,9 @@ const Product = ({ loading, product, categories }) => {
                     <div className={styles.price}>
                       <strong>{`$ ${product.price.amount.toFixed(2)}`}</strong>
                     </div>
+                    <Button onClick={() => null}>
+                      Comprar
+                    </Button>
                   </div>
                 </>
               ) : <h3>Produto não encontrado.</h3>}

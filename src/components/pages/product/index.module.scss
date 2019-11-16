@@ -12,7 +12,7 @@
 
     .cover {
       text-align: center;
-      width: calc(60% - 2rem);
+      width: calc(70% - 2rem);
 
       img {
         max-width: rem(680px);
@@ -21,7 +21,7 @@
     }
 
     .data {
-      width: calc(40% - 2rem);
+      width: calc(30% - 2rem);
 
       > div {
         padding-bottom: 2rem;
@@ -45,7 +45,7 @@
       width: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1023px) {
       @include flex-column();
 
       padding-top: 0;
@@ -57,6 +57,11 @@
         > div {
           padding-left: 2rem;
           padding-right: 2rem;
+        }
+
+        > button {
+          margin-left: 2rem;
+          width: calc(100% - 4rem);
         }
       }
     }
