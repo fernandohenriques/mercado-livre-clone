@@ -14,6 +14,8 @@ import styles from './index.module.scss';
 const Product = ({ loading, product, categories }) => {
   const conditions = new Map([
     ['new', 'Nuevo'],
+    ['not_specified', 'No especificado'],
+    ['used', 'Usado'],
   ]);
 
   const hasSoldQuantity = typeof product.sold_quantity !== 'undefined';
