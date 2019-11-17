@@ -45,8 +45,7 @@
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "sass-rem": "^2.0.1",
-    "throttle-debounce": "^2.1.0"
+    "sass-rem": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -65,11 +64,13 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "1.7.0",
+    "faker": "^4.1.0",
     "file-loader": "^4.2.0",
     "husky": "^3.0.9",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.2",
+    "nock": "^11.7.0",
     "node-sass": "^4.12.0",
     "object-hash": "^2.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",

@@ -11,6 +11,7 @@ describe('<ListProducts />', () => {
       price: {
         currency: 'R$',
         amount: 50,
+        decimals: 0,
       },
       picture: 'https://images.mercadolivre.com.br/imgone.png',
       free_shipping: false,
@@ -24,6 +25,7 @@ describe('<ListProducts />', () => {
       price: {
         currency: 'R$',
         amount: 60,
+        decimals: 0,
       },
       picture: 'https://images.mercadolivre.com.br/imgtwo.png',
       free_shipping: true,

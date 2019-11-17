@@ -39,7 +39,7 @@ Products.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       price: PropTypes.shape({
-        currency: PropTypes.string.isRequired,
+        currency: PropTypes.string,
         amount: PropTypes.number.isRequired,
         decimals: PropTypes.number,
       }).isRequired,
@@ -60,9 +60,10 @@ Products.defaultProps = {
   categories: [],
 };
 
-const mapStateToProps = ({ search: { loading, result } }) => ({
-  loading,
+const mapStateToProps = ({ search: { loading: loadingSearch, result }, product: { loading: loadingProduct } }) => ({
+  loading: (loadingSearch || loadingProduct),
   categories: result.categories,
   products: result.products,
 });
+
 export default connect(mapStateToProps)(Products);

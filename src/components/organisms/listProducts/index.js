@@ -8,7 +8,7 @@ const ListProducts = ({ products }) => products.map((product, i) => {
     id,
     title,
     picture,
-    price: { amount },
+    price: { amount, decimals },
     address: { state_name: stateName },
     free_shipping: freeShipping,
   } = product;
@@ -18,8 +18,9 @@ const ListProducts = ({ products }) => products.map((product, i) => {
       <ProductCard
         id={id}
         title={title}
-        price={amount}
+        amount={amount}
         photoUrl={picture}
+        decimals={decimals}
         stateName={stateName}
         freeShipping={freeShipping} />
       {products.length !== (i + 1) ? <Divider /> : null}

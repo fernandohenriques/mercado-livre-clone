@@ -1,0 +1,13 @@
+.button {
+  background-color: $background-color-button;
+  border: 0;
+  border-radius: .2rem;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-base - rem(1px);
+  font-weight: 400;
+  padding: .5rem;
+  vertical-align: middle;
+  width: 100%;
+}

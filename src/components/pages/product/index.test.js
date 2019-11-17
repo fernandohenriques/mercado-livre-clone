@@ -5,16 +5,16 @@ import { render } from '@testing-library/react';
 
 import { initialState as searchInitialState } from 'store/ducks/search';
 import { initialState as productInisialState } from 'store/ducks/product';
-import Products from './index';
+import Product from './index';
 
-describe('pages <Products />', () => {
+describe('pages <Product />', () => {
   const mockStore = configureMockStore();
   const store = mockStore({ search: searchInitialState, product: productInisialState });
 
   it('Snapshot testing', () => {
     const { asFragment } = render(
       <Provider store={store}>
-        <Products />
+        <Product />
       </Provider>
     );
 

@@ -6,6 +6,18 @@ function api() {
   const baseUrl = process.env.API_URL;
 
   return {
+    getProduct: async (id) => {
+      if (!id) return null;
+
+      const url = `${baseUrl}/items/${id}`;
+
+      try {
+        const response = await fetch(url);
+        return await response.json();
+      } catch (e) {
+        return null;
+      }
+    },
     getProducts: async (q) => {
       if (!q) return null;
 

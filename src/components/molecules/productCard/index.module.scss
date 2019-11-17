@@ -1,12 +1,14 @@
 .card {
   @include flex-default();
 
+  cursor: pointer;
   padding: 1rem 0;
   width: 100%;
 
   img {
     border-radius: rem(4px);
     height: rem(180px);
+    object-fit: contain;
     width: rem(180px);
   }
 
@@ -23,7 +25,6 @@
       .price {
         @include flex-default();
 
-        font-size: 1.5rem;
         justify-content: flex-start;
         margin-bottom: 1.5rem;
       }

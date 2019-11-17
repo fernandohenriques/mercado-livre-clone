@@ -77,5 +77,5 @@ const fetchSearch = (q) => {
   };
 };
 
-export { initialState, fetchSearch };
+export { initialState, fetchSearch, actionTypes };
 export default reducer;

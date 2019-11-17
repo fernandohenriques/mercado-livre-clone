@@ -1,0 +1,47 @@
+@mixin gerenate-price-font-classes($font) {
+  .amount {
+    font-size: $font;
+  }
+
+  .decimals {
+    font-size: calc(#{$font} / 1.8);
+  }
+}
+
+.price {
+  display: inline-block;
+
+  &.small {
+    @include gerenate-price-font-classes($font-size-small);
+  }
+
+  &.medium {
+    @include gerenate-price-font-classes($font-size-medium);
+
+    &.amount {
+      line-height: .9;
+    }
+
+    .decimals {
+      line-height: 1.8;
+      margin: -.25rem 0 0 .25rem;
+    }
+  }
+
+  &.large {
+    @include gerenate-price-font-classes($font-size-extra-large);
+
+    &.amount {
+      line-height: .9;
+    }
+
+    .decimals {
+      line-height: 1.5;
+      margin: -.32rem 0 0 .25rem;
+    }
+  }
+
+  > span {
+    float: left;
+  }
+}
