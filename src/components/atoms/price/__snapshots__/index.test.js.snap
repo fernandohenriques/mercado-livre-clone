@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Price /> Snapshot testing with large size 1`] = `
+<DocumentFragment>
+  <span
+    class="price large"
+  >
+    <span
+      class="amount"
+    >
+      $ 145
+    </span>
+    <span
+      class="decimals"
+    >
+      50
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`<Price /> Snapshot testing with medium size 1`] = `
+<DocumentFragment>
+  <span
+    class="price medium"
+  >
+    <span
+      class="amount"
+    >
+      $ 2.999
+    </span>
+    <span
+      class="decimals"
+    >
+      09
+    </span>
+  </span>
+</DocumentFragment>
+`;

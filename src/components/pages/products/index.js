@@ -60,8 +60,8 @@ Products.defaultProps = {
   categories: [],
 };
 
-const mapStateToProps = ({ search: { loading, result } }) => ({
-  loading,
+const mapStateToProps = ({ search: { loading: loadingSearch, result }, product: { loading: loadingProduct } }) => ({
+  loading: (loadingSearch || loadingProduct),
   categories: result.categories,
   products: result.products,
 });

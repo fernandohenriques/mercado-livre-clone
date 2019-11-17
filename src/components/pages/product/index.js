@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Price from 'components/atoms/price';
 import Button from 'components/atoms/button';
 import Page from 'components/templates/page';
 import Loading from 'components/atoms/loading';
@@ -41,7 +42,9 @@ const Product = ({ loading, product, categories }) => {
                         <strong>{product.title}</strong>
                       </div>
                       <div className={styles.price}>
-                        <strong>{`$ ${product.price.amount.toFixed(2)}`}</strong>
+                        <strong>
+                          <Price amount={product.price.amount} decimals={product.price.decimals} size="large" />
+                        </strong>
                       </div>
                       <Button onClick={() => null}>
                         Comprar
@@ -83,7 +86,6 @@ Product.propTypes = {
     }).isRequired,
     picture: PropTypes.string.isRequired,
     condition: PropTypes.string.isRequired,
-    free_shipping: PropTypes.bool.isRequired,
     sold_quantity: PropTypes.number,
   }),
   categories: PropTypes.arrayOf(PropTypes.string.isRequired),
@@ -95,8 +97,11 @@ Product.defaultProps = {
   categories: [],
 };
 
-const mapStateToProps = ({ product: { loading, lastIdfetched, products }, search: { result } }) => ({
-  loading,
+const mapStateToProps = ({
+  search: { loading: loadingSearch, result },
+  product: { loading: loadingProduct, lastIdfetched, products },
+}) => ({
+  loading: (loadingSearch || loadingProduct),
   product: products.find((item) => item.id === lastIdfetched),
   categories: result.categories,
 });

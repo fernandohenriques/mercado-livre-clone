@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Price from 'components/atoms/price';
 
 import freeShippingIcon from 'assets/images/ic-shipping.png';
 import styles from './index.module.scss';
@@ -9,7 +10,8 @@ const ProductCard = ({
   id,
   title,
   photoUrl,
-  price,
+  amount,
+  decimals,
   stateName,
   freeShipping,
 }) => {
@@ -22,7 +24,7 @@ const ProductCard = ({
         <div className={styles.data}>
           <div className={styles.priceAndTitle}>
             <div className={styles.price}>
-              {`$ ${price.toFixed(2)}`}
+              <Price amount={amount} decimals={decimals} size="medium" />
               {freeShipping ? <img src={freeShippingIcon} alt={freeShippingText} title={freeShippingText} /> : null}
             </div>
             <span className={styles.title}>
@@ -41,10 +43,15 @@ const ProductCard = ({
 ProductCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  amount: PropTypes.number.isRequired,
+  decimals: PropTypes.number,
   photoUrl: PropTypes.string.isRequired,
   freeShipping: PropTypes.bool.isRequired,
   stateName: PropTypes.string.isRequired,
+};
+
+ProductCard.defaultProps = {
+  decimals: 0,
 };
 
 export default ProductCard;

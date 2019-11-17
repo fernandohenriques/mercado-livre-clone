@@ -11,6 +11,7 @@ const initialState = {
     picture: '',
     price: {
       amount: 0,
+      decimals: 0,
     },
     condition: 'new',
     sold_quantity: 0,

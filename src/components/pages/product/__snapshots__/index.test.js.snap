@@ -81,7 +81,15 @@ exports[`pages <Product /> Snapshot testing 1`] = `
               class="price"
             >
               <strong>
-                $ 0.00
+                <span
+                  class="price large"
+                >
+                  <span
+                    class="amount"
+                  >
+                    $ 0
+                  </span>
+                </span>
               </strong>
             </div>
             <button

@@ -40,11 +40,7 @@
       }
 
       .name {
-        font-size: $font-size-almost-medium;
-      }
-
-      .price {
-        font-size: $font-size-extra-large;
+        font-size: $font-size-medium;
       }
     }
 
@@ -70,12 +66,16 @@
     }
   }
 
+  .cover-and-data .price strong {
+    display: inline-block;
+  }
+
   .description {
     margin-top: 6rem;
     width: calc(100% - 4rem);
 
     span {
-      font-size: $font-size-medium;
+      font-size: $font-size-extra-medium;
     }
 
     p {

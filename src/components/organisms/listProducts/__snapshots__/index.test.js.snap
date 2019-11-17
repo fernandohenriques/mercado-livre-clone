@@ -19,7 +19,15 @@ exports[`<ListProducts /> Snapshot testing 1`] = `
         <div
           class="price"
         >
-          $ 50.00
+          <span
+            class="price medium"
+          >
+            <span
+              class="amount"
+            >
+              $ 50
+            </span>
+          </span>
         </div>
         <span
           class="title"
@@ -54,7 +62,15 @@ exports[`<ListProducts /> Snapshot testing 1`] = `
         <div
           class="price"
         >
-          $ 60.00
+          <span
+            class="price medium"
+          >
+            <span
+              class="amount"
+            >
+              $ 60
+            </span>
+          </span>
           <img
             alt="Envío gratis"
             src="ic-shipping.png"

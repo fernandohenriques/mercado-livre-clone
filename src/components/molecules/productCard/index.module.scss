@@ -25,7 +25,6 @@
       .price {
         @include flex-default();
 
-        font-size: 1.5rem;
         justify-content: flex-start;
         margin-bottom: 1.5rem;
       }
