@@ -30,6 +30,17 @@ $ yarn
 $ yarn dev
 ```
 
+### How to build and run in Prod
+
+```
+Antes de executar os passos abaixo, edite o arquivo .env com as respectivas variáveis de prod.
+
+$ cd mercado-livre-clone/
+$ yarn
+$ yarn build
+$ yarn start
+```
+
 ### Run tests
 
 ```
