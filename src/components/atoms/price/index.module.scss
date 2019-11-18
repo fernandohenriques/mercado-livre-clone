@@ -18,7 +18,7 @@
   &.medium {
     @include gerenate-price-font-classes($font-size-medium);
 
-    &.amount {
+    .amount {
       line-height: .9;
     }
 
@@ -31,7 +31,7 @@
   &.large {
     @include gerenate-price-font-classes($font-size-extra-large);
 
-    &.amount {
+    .amount {
       line-height: .9;
     }
 
