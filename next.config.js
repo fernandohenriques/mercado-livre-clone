@@ -60,7 +60,7 @@ module.exports = withCSS(withSass({
     const newConfig = config;
 
     newConfig.module.rules = config.module.rules.map((rule) => {
-      if (rule.test.source.includes('scss') || rule.test.source.includes('sass')) {
+      if (rule.test && (rule.test.source.includes('scss') || rule.test.source.includes('sass'))) {
         const newRule = { ...rule };
         newRule.use = [...rule.use, resourcesLoader];
         return newRule;
